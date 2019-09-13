@@ -9,12 +9,14 @@ export default class Form extends LightningElement {
     fields = ['Name'];
 
     @track website;
+    @track name;
     @track saved = false;
 
-    @wire(getRecord, { recordId: '$recordId', fields: [ACCOUNT_WEBSITE_FIELD] })
+    @wire(getRecord, { recordId: '$recordId', fields: [ACCOUNT_WEBSITE_FIELD, ACCOUNT_NAME_FIELD] })
     handleRecord(result) {
         if(result.data) {
             this.website = result.data.fields.Website.value;
+            this.name = result.data.fields.Name.value;
         }
     }
 
