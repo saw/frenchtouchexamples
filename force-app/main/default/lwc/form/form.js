@@ -7,20 +7,33 @@ export default class Form extends LightningElement {
     @api recordId;
 
     fields = ['Name'];
-
-    @track website;
+    
     @track name;
-    @track saved = false;
+    @track saving = false;
 
-    @wire(getRecord, { recordId: '$recordId', fields: [ACCOUNT_WEBSITE_FIELD, ACCOUNT_NAME_FIELD] })
+    @wire(getRecord, { recordId: '$recordId', fields: [ACCOUNT_NAME_FIELD] })
     handleRecord(result) {
         if(result.data) {
-            this.website = result.data.fields.Website.value;
             this.name = result.data.fields.Name.value;
         }
     }
 
+    handleSubmit() {
+        this.saving = true;
+    }
+
+    handleError() {
+        this.saving = false;
+    }
+
     handleSuccess(e) {
-        this.saved = true;
+        this.saving = false;
+        this.dispatchEvent(
+            new CustomEvent('recordsaved')
+        );
+        let fields = this.template.querySelectorAll('lightning-input-field');
+        [...fields].forEach((field) => {
+            field.reset();
+        })
     }
 }

@@ -1,0 +1,4 @@
+<aura:component implements="force:appHostable,force:hasRecordId,flexipage:availableForAllPageTypes">
+    <c:form onrecordsaved="{!c.handleRefresh}" recordId="{!v.recordId}">
+    </c:form>
+</aura:component>	
