@@ -48,7 +48,8 @@ export default class List extends NavigationMixin(LightningElement) {
 
     handleRefresh() {
         this.loading = true;
-        let r = refreshApex(this._wiredResp);
-        console.log(r);
+        refreshApex(this._wiredResp).then(() => {
+            this.loading = false;
+        });
     }
 }
