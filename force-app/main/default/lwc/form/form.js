@@ -1,13 +1,17 @@
 import { LightningElement, api, wire, track } from 'lwc';
 import { getRecord } from 'lightning/uiRecordApi';
 import ACCOUNT_NAME_FIELD from '@salesforce/schema/Account.Name';
-import ACCOUNT_WEBSITE_FIELD from '@salesforce/schema/Account.Website';
 
 export default class Form extends LightningElement {
     @api recordId;
 
-    fields = ['Name'];
-    
+    @track name = 'No name';
+
+}
+
+
+/*
+
     @track name;
     @track saving = false;
 
@@ -35,5 +39,4 @@ export default class Form extends LightningElement {
         [...fields].forEach((field) => {
             field.reset();
         })
-    }
-}
+    }/*/
