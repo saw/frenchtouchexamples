@@ -1,7 +1,7 @@
 {
   "orgName": "stephen.woods Company",
   "edition": "Developer",
-  "features": ["PersonAccounts"],
+  "features": ["PersonAccounts", "StateAndCountryPicklist"],
   "settings": {
     "orgPreferenceSettings": {
       "s1DesktopEnabled": true
