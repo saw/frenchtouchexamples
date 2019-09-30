@@ -1,6 +1,15 @@
 {
     "compilerOptions": {
-        "experimentalDecorators": true
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+            "c/form": [
+                "form/form.js"
+            ],
+            "c/list": [
+                "list/list.js"
+            ]
+        }
     },
     "include": [
         "**/*",

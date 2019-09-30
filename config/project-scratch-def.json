@@ -1,7 +1,7 @@
 {
   "orgName": "stephen.woods Company",
   "edition": "Developer",
-  "features": [],
+  "features": ["PersonAccounts"],
   "settings": {
     "orgPreferenceSettings": {
       "s1DesktopEnabled": true
