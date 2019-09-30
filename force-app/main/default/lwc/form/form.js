@@ -6,7 +6,7 @@ import ACCOUNT_WEBSITE_FIELD from '@salesforce/schema/Account.Website';
 export default class Form extends LightningElement {
     @api recordId;
 
-    fields = ['Name'];
+    fields = ['Name','MailingAddress'];
     
     @track name;
     @track saving = false;
