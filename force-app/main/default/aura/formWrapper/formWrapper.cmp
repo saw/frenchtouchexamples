@@ -1,4 +1,7 @@
 <aura:component implements="force:appHostable,force:hasRecordId,flexipage:availableForAllPageTypes">
+    <lightning:workspaceAPI aura:id="workspace"/> 
+    <lightning:button label="Open a tab" onclick="{!c.handleClick}"></lightning:button>
     <c:form onrecordsaved="{!c.handleRefresh}" recordId="{!v.recordId}">
     </c:form>
+    
 </aura:component>	

@@ -27,9 +27,12 @@ export default class Form extends LightningElement {
     }
 
     handleSuccess(e) {
+        console.log(JSON.parse(JSON.stringify(e.detail)));
         this.saving = false;
         this.dispatchEvent(
-            new CustomEvent('recordsaved')
+            new CustomEvent('recordsaved',{
+                detail: {id: e.detail.id },
+            })
         );
         let fields = this.template.querySelectorAll('lightning-input-field');
         [...fields].forEach((field) => {

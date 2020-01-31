@@ -1,5 +1,13 @@
 ({
     handleRefresh : function(component, event, helper) {
-        $A.get('e.force:refreshView').fire();
+        var id = event.getParam('id');
+        var workspaceAPI = component.find("workspace");
+        workspaceAPI.openTab({
+            url: '#/sObject/'+id+'/view',
+            focus: true
+        });
+    },
+    handleClick: function (cmp, evt, helper) {
+        alert('yay');
     }
 })
