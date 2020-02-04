@@ -1,0 +1,16 @@
+<aura:component implements="force:appHostable,force:hasRecordId,flexipage:availableForAllPageTypes">
+    <aura:attribute type="Boolean" name="showSection" default="false"></aura:attribute>
+    <lightning:card>
+        <lightning:recordEditForm recordId="0015400000SAIokAAH" objectApiName="Account">
+            <lightning:messages></lightning:messages>
+            <lightning:inputField fieldName="Name"></lightning:inputField>
+            <aura:if isTrue="{!v.showSection}">
+                <p>hi</p>
+                <lightning:inputField fieldName="BillingAddress"></lightning:inputField>
+            </aura:if>
+            <lightning:button type="submit" label="Submit"></lightning:button>
+        </lightning:recordEditForm>
+        <lightning:input onchange="{!c.handleChange}" type="checkbox" label="show section"></lightning:input>
+        <lightning:recordForm recordId="0015400000SAIokAAH" layoutType="Full" objectApiName="Account"></lightning:recordForm>
+    </lightning:card>
+</aura:component>	

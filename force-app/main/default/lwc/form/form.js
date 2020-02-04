@@ -11,8 +11,9 @@ export default class Form extends LightningElement {
     @track name;
     @track saving = false;
 
-    @wire(getRecord, { recordId: '$recordId', fields: [ACCOUNT_NAME_FIELD] })
+    @wire(getRecord, { recordId: '$recordId', fields: [ACCOUNT_NAME_FIELD, ACCOUNT_WEBSITE_FIELD] })
     handleRecord(result) {
+        console.log('result', JSON.parse(JSON.stringify(result)));
         if(result.data) {
             this.name = result.data.fields.Name.value;
         }
